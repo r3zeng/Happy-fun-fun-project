@@ -1,0 +1,66 @@
+#version 400 core
+
+in vec3 surfaceNormal;
+in vec3 toLightVector1;
+in vec3 toLightVector2;
+in vec3 toLightVector3;
+in vec3 toLightVector4;
+in vec3 toLightVector5;
+in vec3 toLightVector6;
+in vec3 toLightVector7;
+in vec3 toLightVector8;
+
+out vec4 out_Color;
+
+uniform vec3 lightColor1;
+uniform vec3 lightColor2;
+uniform vec3 lightColor3;
+uniform vec3 lightColor4;
+uniform vec3 lightColor5;
+uniform vec3 lightColor6;
+uniform vec3 lightColor7;
+uniform vec3 lightColor8;
+
+void main(void){
+
+	vec3 unitNormal1 = normalize(toLightVector1);
+	vec3 unitNormal2 = normalize(toLightVector2);
+	vec3 unitNormal3 = normalize(toLightVector3);
+	vec3 unitNormal4 = normalize(toLightVector4);
+	vec3 unitNormal5 = normalize(toLightVector5);
+	vec3 unitNormal6 = normalize(toLightVector6);
+	vec3 unitNormal7 = normalize(toLightVector7);
+	vec3 unitNormal8 = normalize(toLightVector8);
+	vec3 unitSurface = normalize(surfaceNormal);
+	
+	float nDot1 = dot(unitNormal1, unitSurface);
+	float nDot2 = dot(unitNormal2, unitSurface);
+	float nDot3 = dot(unitNormal3, unitSurface);
+	float nDot4 = dot(unitNormal4, unitSurface);
+	float nDot5 = dot(unitNormal5, unitSurface);
+	float nDot6 = dot(unitNormal6, unitSurface);
+	float nDot7 = dot(unitNormal7, unitSurface);
+	float nDot8 = dot(unitNormal8, unitSurface);
+	
+	float brightness1 = max (nDot1, 0.0);
+	float brightness2 = max (nDot2, 0.0);
+	float brightness3 = max (nDot3, 0.0);
+	float brightness4 = max (nDot4, 0.0);
+	float brightness5 = max (nDot5, 0.0);
+	float brightness6 = max (nDot6, 0.0);
+	float brightness7 = max (nDot7, 0.0);
+	float brightness8 = max (nDot8, 0.0);
+	
+	vec3 diffuse1 = brightness1 * lightColor1;
+	vec3 diffuse2 = brightness2 * lightColor2;
+	vec3 diffuse3 = brightness3 * lightColor3;
+	vec3 diffuse4 = brightness4 * lightColor4;
+	vec3 diffuse5 = brightness5 * lightColor5;
+	vec3 diffuse6 = brightness6 * lightColor6;
+	vec3 diffuse7 = brightness7 * lightColor7;
+	vec3 diffuse8 = brightness8 * lightColor8;
+	
+	vec3 ambient = vec3( 0.1, 0.1, 0.1);
+	
+	out_Color = (vec4(diffuse1, 1.0) + vec4(diffuse2, 1.0) + vec4(diffuse3, 1.0) + vec4(diffuse4, 1.0) + vec4(diffuse5, 1.0) + vec4(diffuse6, 1.0) + vec4(diffuse7, 1.0) + vec4(diffuse8, 1.0))/6 + vec4(ambient, 1.0);
+}
