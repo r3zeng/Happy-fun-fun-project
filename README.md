@@ -42,9 +42,9 @@ KeyBoard commands
     
     
     
-Command line args
+  Command line args
 
-./driver model_name(String) scale(float [optional defult 1])
+    ./driver model_name(String) scale(float [optional defult 1])
 
 
 
