@@ -48,44 +48,44 @@ Command line args
 
 
 
-list of valid model_name
+  list of valid model_name
 
-  armadillo
+    armadillo
   
-  brain
+    brain
   
-  bunny-holefilled
+    bunny-holefilled
   
-  buunny
+    buunny
   
-  cone 
+    cone 
   
-  cow
+    cow
   
-  elephant
+    elephant
   
-  fandisk
+    fandisk
   
-  hand
+    hand
   
-  heptoroid
+    heptoroid
   
-  ico
+    ico
   
-  moomoo
+    moomoo
   
-  mountains
+    mountains
   
-  mug
+    mug
   
-  plane
+    plane
   
-  rocker-arm
+    rocker-arm
   
-  sphere
+    sphere
   
-  teapot
+    teapot
   
-  torus
+    torus
   
-  turtle
+    turtle
